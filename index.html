@@ -7,15 +7,18 @@
 <title>KARTIK NETWORK | One Network. Multiple Opportunities.</title>
 
 <meta name="description"
-content="KARTIK NETWORK connects partners with opportunities across Real Estate, Finance and Digital Services with structured training, support and follow-up.">
+content="KARTIK NETWORK connects partners with opportunities across Real Estate, Finance and Digital Marketing through a structured partner workflow, training, support and follow-up.">
 
-<meta name="theme-color" content="#071d3a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 
-/* =========================
-   RESET
-========================= */
+/* =========================================================
+   GLOBAL
+========================================================= */
 
 *{
     margin:0;
@@ -28,9 +31,9 @@ html{
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f7fbff;
-    color:#071d3a;
+    font-family:'Inter',sans-serif;
+    background:#f8fbff;
+    color:#09213d;
     overflow-x:hidden;
 }
 
@@ -40,48 +43,31 @@ img{
 }
 
 button,
-input,
-select,
-textarea{
+a{
     font-family:inherit;
 }
 
 a{
     text-decoration:none;
-    color:inherit;
 }
 
-/* =========================
-   VARIABLES
-========================= */
-
-:root{
-    --navy:#071d3a;
-    --blue:#0878df;
-    --cyan:#08a9bd;
-    --green:#25d99a;
-    --darkgreen:#006d69;
-    --light:#f5fbff;
-    --text:#617187;
-    --white:#ffffff;
-    --border:#e2eaf2;
+.container{
+    width:min(1180px,92%);
+    margin:auto;
 }
 
-/* =========================
+/* =========================================================
    BACKGROUND EFFECT
-========================= */
+========================================================= */
 
 body::before{
     content:"";
     position:fixed;
     width:600px;
     height:600px;
-    border-radius:50%;
-    background:radial-gradient(circle,
-        rgba(0,180,255,.08),
-        transparent 65%);
     top:-250px;
-    left:-200px;
+    left:-250px;
+    background:radial-gradient(circle,rgba(0,153,255,.12),transparent 65%);
     pointer-events:none;
     z-index:-2;
 }
@@ -91,201 +77,187 @@ body::after{
     position:fixed;
     width:600px;
     height:600px;
-    border-radius:50%;
-    background:radial-gradient(circle,
-        rgba(37,217,154,.08),
-        transparent 65%);
+    bottom:-300px;
     right:-250px;
-    bottom:-250px;
+    background:radial-gradient(circle,rgba(0,220,160,.12),transparent 65%);
     pointer-events:none;
     z-index:-2;
 }
 
-/* =========================
+/* =========================================================
    HEADER
-========================= */
+========================================================= */
 
 .header{
     position:fixed;
     top:15px;
     left:50%;
     transform:translateX(-50%);
-    width:94%;
-    max-width:1250px;
+    width:min(1150px,94%);
     z-index:1000;
+
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(20,70,110,.08);
+    box-shadow:0 12px 40px rgba(10,50,90,.12);
+
+    border-radius:18px;
 }
 
-.navbar{
+.nav{
     height:68px;
-    background:rgba(255,255,255,.92);
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-    border:1px solid rgba(220,230,240,.8);
-    box-shadow:0 12px 35px rgba(7,29,58,.10);
-    border-radius:20px;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:0 18px;
+    padding:8px 12px;
 }
 
-.logo-area{
+.brand{
     display:flex;
     align-items:center;
     gap:10px;
+    color:#09213d;
+    font-weight:800;
 }
 
-.logo-area img{
-    width:43px;
-    height:43px;
+.brand img{
+    width:125px;
+    height:48px;
     object-fit:contain;
-    border-radius:12px;
-}
-
-.logo-text{
-    font-size:14px;
-    font-weight:900;
-    letter-spacing:.4px;
-    color:var(--navy);
+    object-position:center;
 }
 
 .nav-links{
     display:flex;
     align-items:center;
-    gap:28px;
+    gap:25px;
 }
 
 .nav-links a{
     font-size:13px;
-    font-weight:700;
-    color:#536477;
+    font-weight:600;
+    color:#52647a;
     transition:.3s;
 }
 
 .nav-links a:hover{
-    color:var(--blue);
+    color:#0784d5;
 }
 
 .nav-btn{
-    padding:11px 17px;
-    border-radius:12px;
-    color:#fff !important;
-    background:linear-gradient(135deg,var(--blue),var(--cyan));
-    box-shadow:0 8px 22px rgba(8,120,223,.25);
+    padding:11px 18px;
+    color:white !important;
+    background:linear-gradient(135deg,#087ed3,#00a9d8);
+    border-radius:10px;
+    box-shadow:0 8px 20px rgba(0,145,220,.25);
 }
 
 .menu-btn{
     display:none;
     border:0;
-    background:none;
-    font-size:25px;
-    color:var(--navy);
+    background:#edf7ff;
+    color:#087ed3;
+    width:42px;
+    height:42px;
+    border-radius:10px;
+    font-size:21px;
 }
 
-/* =========================
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero{
     min-height:100vh;
-    padding:155px 6% 90px;
+    padding-top:140px;
+    padding-bottom:80px;
+
     display:flex;
     align-items:center;
-    position:relative;
-    overflow:hidden;
+
+    background:
+        radial-gradient(circle at 80% 30%,rgba(0,164,255,.13),transparent 30%),
+        radial-gradient(circle at 15% 80%,rgba(0,230,170,.10),transparent 25%),
+        #f8fbff;
 }
 
-.hero-container{
-    max-width:1250px;
-    width:100%;
-    margin:auto;
+.hero-grid{
     display:grid;
-    grid-template-columns:1.05fr .95fr;
+    grid-template-columns:1fr 1fr;
+    gap:65px;
     align-items:center;
-    gap:70px;
 }
 
 .badge{
     display:inline-flex;
     align-items:center;
     gap:8px;
-    background:#e9fbf6;
-    border:1px solid #ccefe5;
-    color:#087d6d;
-    padding:9px 15px;
-    border-radius:30px;
+
+    padding:8px 14px;
+    border-radius:50px;
+
+    background:#e7faf4;
+    color:#13a77e;
+
     font-size:11px;
-    font-weight:900;
-    letter-spacing:1px;
+    font-weight:800;
+    letter-spacing:.7px;
     text-transform:uppercase;
-    margin-bottom:22px;
+    margin-bottom:20px;
 }
 
 .badge::before{
     content:"";
-    width:8px;
-    height:8px;
+    width:7px;
+    height:7px;
     border-radius:50%;
-    background:var(--green);
-    box-shadow:0 0 0 5px rgba(37,217,154,.12);
-    animation:pulse 1.8s infinite;
-}
-
-@keyframes pulse{
-    0%,100%{
-        box-shadow:0 0 0 4px rgba(37,217,154,.15);
-    }
-    50%{
-        box-shadow:0 0 0 10px rgba(37,217,154,.02);
-    }
+    background:#16c894;
+    box-shadow:0 0 0 5px rgba(22,200,148,.12);
 }
 
 .hero h1{
-    font-size:clamp(48px,6vw,82px);
-    line-height:.98;
-    letter-spacing:-4px;
-    margin-bottom:27px;
-    font-weight:950;
+    font-size:clamp(42px,6vw,76px);
+    line-height:1.02;
+    letter-spacing:-3px;
+    margin-bottom:24px;
 }
 
-.hero h1 span:nth-child(1){
-    color:var(--navy);
+.gradient-text{
+    background:linear-gradient(90deg,#087ed3,#10c99b);
+    -webkit-background-clip:text;
+    color:transparent;
 }
 
-.hero h1 span:nth-child(2){
-    color:var(--green);
-}
-
-.hero h1 span:nth-child(3){
-    color:var(--blue);
-}
-
-.hero-text{
-    max-width:650px;
-    font-size:18px;
-    line-height:1.75;
-    color:var(--text);
+.hero p{
+    max-width:610px;
+    font-size:16px;
+    line-height:1.8;
+    color:#617186;
     margin-bottom:30px;
 }
 
 .hero-buttons{
     display:flex;
     flex-wrap:wrap;
-    gap:13px;
+    gap:12px;
 }
 
 .btn{
-    border:0;
-    cursor:pointer;
-    padding:15px 22px;
-    border-radius:13px;
-    font-size:13px;
-    font-weight:900;
-    transition:.35s;
     display:inline-flex;
     align-items:center;
     justify-content:center;
     gap:8px;
+
+    padding:14px 21px;
+    border-radius:11px;
+
+    font-size:13px;
+    font-weight:800;
+
+    transition:.35s;
+    border:0;
+    cursor:pointer;
 }
 
 .btn:hover{
@@ -293,265 +265,228 @@ body::after{
 }
 
 .btn-primary{
-    color:white;
-    background:linear-gradient(135deg,#0677df,#08aab9);
-    box-shadow:0 14px 30px rgba(8,120,223,.25);
+    background:linear-gradient(135deg,#087ed3,#009fd6);
+    color:#fff;
+    box-shadow:0 12px 25px rgba(0,135,215,.25);
 }
 
-.btn-green{
+.btn-whatsapp{
+    background:linear-gradient(135deg,#08bd77,#16d997);
     color:white;
-    background:linear-gradient(135deg,#09ad83,#20d79c);
-    box-shadow:0 14px 30px rgba(0,180,130,.22);
+    box-shadow:0 12px 25px rgba(0,200,140,.20);
 }
 
 .btn-light{
     background:white;
-    color:var(--navy);
-    border:1px solid var(--border);
+    color:#17304b;
+    border:1px solid #dfeaf3;
 }
 
-/* =========================
-   HERO IMAGE
-========================= */
-
-.hero-visual{
+.hero-image-wrap{
     position:relative;
-    min-height:520px;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
+}
+
+.hero-image-card{
+    width:100%;
+    max-width:530px;
+    min-height:410px;
+
+    background:rgba(255,255,255,.75);
+    border:1px solid rgba(30,100,150,.08);
+
+    border-radius:35px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:30px;
+
+    box-shadow:
+        0 35px 80px rgba(10,50,90,.13),
+        inset 0 0 40px rgba(0,150,220,.04);
+
+    position:relative;
 }
 
 .hero-image{
-    width:88%;
-    max-width:520px;
-    border-radius:35px;
-    box-shadow:0 35px 70px rgba(7,29,58,.22);
-    animation:floatImage 5s ease-in-out infinite;
-    object-fit:cover;
-    aspect-ratio:4/5;
-}
-
-@keyframes floatImage{
-    0%,100%{
-        transform:translateY(0) rotate(0deg);
-    }
-    50%{
-        transform:translateY(-15px) rotate(.7deg);
-    }
-}
-
-.floating-card{
-    position:absolute;
-    background:rgba(255,255,255,.94);
-    backdrop-filter:blur(15px);
-    padding:20px;
-    border-radius:20px;
-    box-shadow:0 20px 45px rgba(7,29,58,.18);
-    width:220px;
-    animation:cardFloat 4s ease-in-out infinite;
-}
-
-.card-one{
-    left:-5px;
-    bottom:55px;
-}
-
-.card-two{
-    right:-15px;
-    top:70px;
-    animation-delay:1.5s;
-}
-
-@keyframes cardFloat{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-12px);
-    }
-}
-
-.floating-card small{
-    display:block;
-    color:#7b8b9c;
-    font-size:10px;
-    font-weight:700;
-    margin-bottom:5px;
-}
-
-.floating-card strong{
-    display:block;
-    color:var(--navy);
-    font-size:16px;
-}
-
-/* =========================
-   COMMON
-========================= */
-
-.section{
-    padding:105px 6%;
-}
-
-.container{
     width:100%;
-    max-width:1250px;
-    margin:auto;
+    height:330px;
+
+    /* IMPORTANT: NO CROPPING */
+    object-fit:contain;
+    object-position:center;
 }
 
-.section-heading{
+.float-card{
+    position:absolute;
+    padding:13px 17px;
+    background:white;
+    border-radius:14px;
+    box-shadow:0 15px 35px rgba(0,40,80,.15);
+    font-size:11px;
+    font-weight:700;
+}
+
+.float-card.one{
+    top:35px;
+    right:-15px;
+}
+
+.float-card.two{
+    bottom:40px;
+    left:-15px;
+}
+
+.float-card span{
+    display:block;
+    color:#12b98b;
+    margin-top:4px;
+}
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+section{
+    padding:100px 0;
+}
+
+.section-head{
     text-align:center;
-    max-width:850px;
+    max-width:780px;
     margin:0 auto 55px;
 }
 
-.section-heading h2{
-    font-size:clamp(38px,5vw,62px);
-    letter-spacing:-3px;
-    line-height:1;
-    margin-bottom:20px;
+.section-head h2{
+    font-size:clamp(34px,5vw,55px);
+    letter-spacing:-2px;
+    line-height:1.08;
+    margin-bottom:16px;
 }
 
-.section-heading h2 span{
-    color:var(--blue);
+.section-head p{
+    color:#6b7b8e;
+    line-height:1.8;
+    font-size:14px;
 }
 
-.section-heading p{
-    color:var(--text);
-    line-height:1.7;
-    font-size:16px;
-}
+/* =========================================================
+   ABOUT / NETWORK
+========================================================= */
 
-/* =========================
-   INTRO
-========================= */
-
-.intro{
+.about{
     background:white;
 }
 
-.intro-grid{
+.about-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:30px;
-    align-items:stretch;
+    gap:45px;
+    align-items:center;
 }
 
-.info-box{
-    background:white;
-    border:1px solid var(--border);
+.about-image{
+    background:#f5faff;
     border-radius:28px;
-    padding:40px;
-    box-shadow:0 15px 45px rgba(7,29,58,.06);
+    padding:25px;
+    min-height:390px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid #e6f0f7;
 }
 
-.info-box h3{
-    font-size:28px;
+.about-image img{
+    width:100%;
+    height:330px;
+    object-fit:contain;
+}
+
+.about-content h3{
+    font-size:40px;
+    line-height:1.1;
+    letter-spacing:-1.5px;
     margin-bottom:18px;
 }
 
-.info-box p{
-    color:var(--text);
-    line-height:1.75;
-}
-
-.dark-box{
-    color:white;
-    background:linear-gradient(135deg,#071d3a,#00766e);
-    border:0;
-    position:relative;
-    overflow:hidden;
-}
-
-.dark-box::after{
-    content:"";
-    position:absolute;
-    width:300px;
-    height:300px;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:50%;
-    right:-120px;
-    bottom:-150px;
-}
-
-.dark-box h3{
-    color:white;
-}
-
-.dark-box p{
-    color:#d6e4ed;
+.about-content p{
+    color:#68788a;
+    line-height:1.8;
+    font-size:15px;
+    margin-bottom:25px;
 }
 
 .check-list{
-    list-style:none;
-    margin-top:25px;
-}
-
-.check-list li{
-    display:flex;
-    gap:12px;
-    margin:17px 0;
-    color:#405268;
-    font-weight:700;
-}
-
-.dark-box .check-list li{
-    color:white;
+    display:grid;
+    gap:14px;
 }
 
 .check{
-    min-width:23px;
-    height:23px;
-    border-radius:50%;
-    background:#dffaf0;
-    color:#00a57b;
     display:flex;
-    justify-content:center;
     align-items:center;
-    font-size:12px;
+    gap:12px;
+    font-size:14px;
+    font-weight:600;
+    color:#354b61;
 }
 
-/* =========================
+.check i{
+    width:25px;
+    height:25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#e3faf2;
+    color:#10b887;
+    font-style:normal;
+}
+
+/* =========================================================
    OPPORTUNITIES
-========================= */
+========================================================= */
 
 .opportunities{
-    background:#f4faff;
+    background:#f2f8fc;
 }
 
 .opportunity-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:22px;
+    gap:20px;
 }
 
-.opportunity-card{
-    min-height:430px;
-    border-radius:27px;
-    overflow:hidden;
+.opportunity{
     position:relative;
-    color:white;
-    box-shadow:0 20px 45px rgba(7,29,58,.12);
-    transition:.45s;
+    min-height:390px;
+    overflow:hidden;
+    border-radius:25px;
+    background:#0b2947;
+    box-shadow:0 20px 45px rgba(10,50,90,.12);
 }
 
-.opportunity-card:hover{
-    transform:translateY(-12px);
-    box-shadow:0 30px 60px rgba(7,29,58,.20);
-}
-
-.opportunity-card img{
+.opportunity img{
     position:absolute;
     inset:0;
     width:100%;
     height:100%;
-    object-fit:cover;
-    transition:.6s;
+
+    /* NO CUTTING */
+    object-fit:contain;
+
+    background:#eaf2f8;
+
+    transition:transform .8s ease;
 }
 
-.opportunity-card:hover img{
-    transform:scale(1.08);
+.opportunity:hover img{
+    transform:scale(1.04);
 }
 
 .opportunity-overlay{
@@ -559,154 +494,116 @@ body::after{
     inset:0;
     background:linear-gradient(
         to top,
-        rgba(3,17,37,.95),
-        rgba(3,17,37,.25),
-        rgba(3,17,37,.05)
+        rgba(3,24,46,.95),
+        rgba(3,24,46,.18) 65%,
+        transparent
     );
 }
 
 .opportunity-content{
     position:absolute;
-    bottom:0;
-    padding:27px;
+    left:25px;
+    right:25px;
+    bottom:25px;
+    color:white;
 }
 
 .opportunity-content h3{
-    font-size:27px;
-    margin-bottom:10px;
+    font-size:25px;
+    margin-bottom:8px;
 }
 
 .opportunity-content p{
-    color:#d8e2ec;
+    font-size:12px;
     line-height:1.6;
-    font-size:14px;
-    margin-bottom:18px;
+    color:#dce8f3;
+    margin-bottom:13px;
 }
 
 .learn{
-    color:#43e2b1;
-    font-weight:900;
-    font-size:13px;
+    color:#26d9a1;
+    font-size:12px;
+    font-weight:800;
 }
 
-/* =========================
-   PROCESS
-========================= */
+/* =========================================================
+   HOW IT WORKS
+========================================================= */
 
-.process{
-    background:white;
-}
-
-.process-grid{
+.steps{
     display:grid;
     grid-template-columns:repeat(5,1fr);
     gap:15px;
 }
 
-.process-card{
-    position:relative;
+.step{
     background:white;
-    border:1px solid var(--border);
-    border-radius:22px;
-    padding:25px 20px;
-    min-height:210px;
-    box-shadow:0 10px 30px rgba(7,29,58,.04);
+    border:1px solid #e5edf4;
+    border-radius:20px;
+    padding:25px 18px;
+    min-height:220px;
     transition:.4s;
 }
 
-.process-card:hover{
+.step:hover{
     transform:translateY(-8px);
-    border-color:#b9d8f5;
-    box-shadow:0 20px 45px rgba(7,29,58,.10);
+    box-shadow:0 20px 40px rgba(10,60,100,.10);
 }
 
-.process-number{
-    width:42px;
-    height:42px;
-    border-radius:12px;
-    background:#edf6ff;
-    color:var(--blue);
+.step-number{
+    width:35px;
+    height:35px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-weight:950;
+    border-radius:10px;
+
+    background:#e8f5ff;
+    color:#0784d5;
+
+    font-size:12px;
+    font-weight:800;
+
     margin-bottom:22px;
 }
 
-.process-card h3{
-    font-size:18px;
+.step h3{
+    font-size:16px;
     margin-bottom:10px;
 }
 
-.process-card p{
-    color:var(--text);
-    line-height:1.6;
-    font-size:13px;
+.step p{
+    font-size:12px;
+    line-height:1.7;
+    color:#738295;
 }
 
-/* =========================
-   FEATURE IMAGE
-========================= */
+/* =========================================================
+   PROCESS IMAGE
+========================================================= */
 
-.feature-section{
-    background:#f5fbff;
-}
-
-.feature-image-wrap{
-    position:relative;
+.process-image{
+    margin-top:50px;
+    border-radius:28px;
     overflow:hidden;
-    border-radius:32px;
-    min-height:460px;
-    box-shadow:0 25px 60px rgba(7,29,58,.15);
+    background:#edf5fa;
+    padding:15px;
+    box-shadow:0 25px 60px rgba(0,50,90,.12);
 }
 
-.feature-image{
-    position:absolute;
-    inset:0;
+.process-image img{
     width:100%;
-    height:100%;
-    object-fit:cover;
+    max-height:520px;
+
+    /* NEVER CROP */
+    object-fit:contain;
+
+    border-radius:18px;
 }
 
-.feature-overlay{
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        90deg,
-        rgba(4,20,42,.94),
-        rgba(4,20,42,.58),
-        rgba(4,20,42,.12)
-    );
-}
-
-.feature-content{
-    position:relative;
-    z-index:2;
-    padding:70px;
-    max-width:720px;
-    color:white;
-}
-
-.feature-content h2{
-    font-size:clamp(38px,5vw,62px);
-    line-height:1;
-    letter-spacing:-2px;
-    margin-bottom:20px;
-}
-
-.feature-content h2 span{
-    color:#42e1b0;
-}
-
-.feature-content p{
-    color:#d8e4ed;
-    line-height:1.8;
-    margin-bottom:25px;
-}
-
-/* =========================
+/* =========================================================
    TRAINING
-========================= */
+========================================================= */
 
 .training{
     background:white;
@@ -715,574 +612,685 @@ body::after{
 .training-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:30px;
+    gap:60px;
     align-items:center;
 }
 
 .training-image{
+    background:#f3f8fc;
     border-radius:30px;
-    width:100%;
-    min-height:420px;
-    object-fit:cover;
-    box-shadow:0 25px 55px rgba(7,29,58,.15);
-}
+    padding:20px;
+    min-height:390px;
 
-.training-content h2{
-    font-size:clamp(38px,5vw,58px);
-    letter-spacing:-3px;
-    line-height:1;
-    margin-bottom:20px;
-}
-
-.training-content h2 span{
-    color:var(--blue);
-}
-
-.training-content p{
-    color:var(--text);
-    line-height:1.8;
-}
-
-.training-points{
-    margin-top:25px;
-}
-
-.training-point{
-    display:flex;
-    align-items:flex-start;
-    gap:14px;
-    margin-bottom:20px;
-}
-
-.training-icon{
-    width:38px;
-    height:38px;
-    min-width:38px;
-    border-radius:12px;
-    background:#eaf6ff;
-    color:var(--blue);
     display:flex;
     align-items:center;
     justify-content:center;
-    font-weight:900;
 }
 
-/* =========================
-   BENEFITS
-========================= */
+.training-image img{
+    width:100%;
+    height:350px;
+    object-fit:contain;
+}
+
+.training-content h2{
+    font-size:46px;
+    line-height:1.05;
+    letter-spacing:-2px;
+    margin-bottom:18px;
+}
+
+.training-content>p{
+    color:#68788b;
+    line-height:1.8;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+.training-list{
+    display:grid;
+    gap:17px;
+}
+
+.training-item{
+    display:grid;
+    grid-template-columns:40px 1fr;
+    gap:13px;
+}
+
+.training-item span{
+    width:35px;
+    height:35px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    background:#e9f6ff;
+    color:#087ed3;
+    font-size:11px;
+    font-weight:800;
+}
+
+.training-item h4{
+    font-size:14px;
+    margin-bottom:4px;
+}
+
+.training-item p{
+    color:#7a8796;
+    font-size:12px;
+    line-height:1.6;
+}
+
+/* =========================================================
+   PARTNER BENEFITS
+========================================================= */
 
 .benefits{
-    background:#f4faff;
+    background:#f2f8fc;
 }
 
 .benefit-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:20px;
+    gap:18px;
 }
 
 .benefit{
     background:white;
-    padding:30px;
-    border-radius:22px;
-    border:1px solid var(--border);
+    border:1px solid #e3edf4;
+    border-radius:20px;
+    padding:25px 20px;
     transition:.4s;
 }
 
 .benefit:hover{
-    transform:translateY(-8px);
-    box-shadow:0 20px 40px rgba(7,29,58,.09);
+    transform:translateY(-7px);
+    box-shadow:0 20px 40px rgba(0,50,90,.09);
 }
 
 .benefit-icon{
-    width:48px;
-    height:48px;
-    border-radius:15px;
+    width:40px;
+    height:40px;
     display:flex;
     justify-content:center;
     align-items:center;
-    background:#e9f7ff;
-    color:var(--blue);
-    font-weight:950;
-    margin-bottom:20px;
+    background:#e8f7ff;
+    color:#087ed3;
+    border-radius:12px;
+    margin-bottom:18px;
 }
 
 .benefit h3{
-    margin-bottom:10px;
+    font-size:15px;
+    margin-bottom:8px;
 }
 
 .benefit p{
-    color:var(--text);
-    line-height:1.6;
-    font-size:14px;
-}
-
-/* =========================
-   CTA
-========================= */
-
-.cta{
-    padding:100px 6%;
-    background:white;
-}
-
-.cta-box{
-    max-width:1200px;
-    margin:auto;
-    border-radius:35px;
-    padding:75px;
-    background:linear-gradient(135deg,#071d3a,#006e6b);
-    color:white;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
-    box-shadow:0 30px 70px rgba(7,29,58,.20);
-}
-
-.cta-box::before{
-    content:"";
-    position:absolute;
-    width:500px;
-    height:500px;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:50%;
-    left:-250px;
-    top:-250px;
-}
-
-.cta-box h2{
-    position:relative;
-    font-size:clamp(40px,5vw,65px);
-    line-height:1;
-    letter-spacing:-3px;
-    margin-bottom:20px;
-}
-
-.cta-box h2 span{
-    color:#43e2b1;
-}
-
-.cta-box p{
-    position:relative;
-    color:#d5e2eb;
-    max-width:650px;
-    margin:0 auto 30px;
+    color:#778698;
+    font-size:12px;
     line-height:1.7;
 }
 
-.cta-buttons{
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.cta{
+    padding:40px 0 100px;
+    background:#f2f8fc;
+}
+
+.cta-box{
     position:relative;
+    overflow:hidden;
+
+    border-radius:32px;
+
+    padding:70px 30px;
+    text-align:center;
+
+    background:
+        radial-gradient(circle at 15% 30%,rgba(0,170,255,.25),transparent 30%),
+        radial-gradient(circle at 85% 70%,rgba(0,220,160,.25),transparent 30%),
+        linear-gradient(135deg,#062544,#075968);
+
+    color:white;
+    box-shadow:0 30px 70px rgba(5,45,70,.20);
+}
+
+.cta-box h2{
+    font-size:clamp(35px,5vw,58px);
+    letter-spacing:-2px;
+    line-height:1.08;
+    margin-bottom:18px;
+}
+
+.cta-box h2 span{
+    color:#20d69e;
+}
+
+.cta-box p{
+    max-width:680px;
+    margin:0 auto 25px;
+    color:#cbdde8;
+    font-size:14px;
+    line-height:1.8;
+}
+
+.cta-buttons{
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
     gap:12px;
 }
 
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 footer{
-    background:#061a35;
+    background:#061d38;
     color:white;
-    padding:55px 6% 25px;
+    padding:55px 0 25px;
 }
 
 .footer-grid{
-    max-width:1250px;
-    margin:auto;
     display:grid;
-    grid-template-columns:1.5fr 1fr 1fr;
-    gap:40px;
-}
-
-.footer-brand{
-    display:flex;
-    gap:12px;
-    align-items:center;
-    margin-bottom:20px;
+    grid-template-columns:1.5fr 1fr 1fr 1fr;
+    gap:35px;
 }
 
 .footer-brand img{
-    width:45px;
-    height:45px;
-    border-radius:12px;
+    width:180px;
+    height:70px;
+    object-fit:contain;
+    background:white;
+    border-radius:10px;
+    padding:4px;
 }
 
-.footer h3{
+.footer-brand p{
+    margin-top:18px;
+    color:#9fb2c5;
+    font-size:12px;
+    line-height:1.8;
+    max-width:320px;
+}
+
+footer h4{
     margin-bottom:15px;
-}
-
-.footer p{
-    color:#a9bbcd;
-    line-height:1.7;
     font-size:14px;
 }
 
-.footer a{
+footer a{
     display:block;
-    color:#a9bbcd;
-    margin:10px 0;
-    font-size:14px;
-    transition:.3s;
+    color:#9fb2c5;
+    font-size:12px;
+    margin-bottom:11px;
 }
 
-.footer a:hover{
-    color:white;
+footer a:hover{
+    color:#20d69e;
 }
 
 .footer-bottom{
-    max-width:1250px;
-    margin:40px auto 0;
+    margin-top:35px;
     padding-top:20px;
-    border-top:1px solid rgba(255,255,255,.1);
+    border-top:1px solid rgba(255,255,255,.08);
     text-align:center;
-    color:#8094a9;
-    font-size:12px;
+    color:#758da5;
+    font-size:11px;
 }
 
-/* =========================
-   WHATSAPP
-========================= */
+/* =========================================================
+   FLOATING WHATSAPP
+========================================================= */
 
-.whatsapp{
+.whatsapp-float{
     position:fixed;
-    right:22px;
+    right:20px;
     bottom:22px;
-    width:62px;
-    height:62px;
-    border-radius:50%;
-    background:#18bd72;
-    color:white;
+
+    width:58px;
+    height:58px;
+
     display:flex;
-    align-items:center;
     justify-content:center;
-    font-size:27px;
-    z-index:999;
-    box-shadow:0 10px 30px rgba(24,189,114,.4);
-    animation:whatsappPulse 2s infinite;
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#18c985;
+    color:white;
+
+    font-size:25px;
+
+    box-shadow:
+        0 10px 30px rgba(0,200,130,.35),
+        0 0 0 8px rgba(24,201,133,.10);
+
+    z-index:1500;
+
+    animation:pulse 2s infinite;
 }
 
-@keyframes whatsappPulse{
+@keyframes pulse{
     0%,100%{
-        box-shadow:0 10px 30px rgba(24,189,114,.4);
+        box-shadow:
+        0 10px 30px rgba(0,200,130,.35),
+        0 0 0 8px rgba(24,201,133,.10);
     }
+
     50%{
-        box-shadow:0 10px 30px rgba(24,189,114,.4),
-        0 0 0 12px rgba(24,189,114,.08);
+        box-shadow:
+        0 10px 35px rgba(0,200,130,.45),
+        0 0 0 15px rgba(24,201,133,.04);
     }
 }
 
-/* =========================
+/* =========================================================
+   ENQUIRY BUTTON
+========================================================= */
+
+.enquiry-button{
+    position:fixed;
+    right:20px;
+    bottom:95px;
+
+    background:linear-gradient(135deg,#087ed3,#0066b3);
+    color:white;
+
+    border:0;
+    border-radius:30px;
+
+    padding:13px 19px;
+
+    font-size:12px;
+    font-weight:800;
+
+    box-shadow:0 12px 30px rgba(0,110,200,.25);
+
+    cursor:pointer;
+    z-index:1500;
+
+    transition:.3s;
+}
+
+.enquiry-button:hover{
+    transform:translateY(-4px);
+}
+
+/* =========================================================
    POPUP
-========================= */
+========================================================= */
 
 .popup{
     position:fixed;
     inset:0;
-    background:rgba(2,15,33,.72);
+
+    background:rgba(0,20,40,.62);
     backdrop-filter:blur(8px);
+
     display:none;
-    align-items:center;
     justify-content:center;
+    align-items:center;
+
     padding:20px;
-    z-index:5000;
+
+    z-index:3000;
 }
 
 .popup.active{
     display:flex;
-    animation:fadeIn .3s ease;
-}
-
-@keyframes fadeIn{
-    from{opacity:0;}
-    to{opacity:1;}
 }
 
 .popup-box{
+    width:min(500px,100%);
     background:white;
-    width:100%;
-    max-width:560px;
-    border-radius:28px;
-    padding:35px;
+    border-radius:25px;
+    padding:30px;
+
     position:relative;
-    max-height:90vh;
-    overflow:auto;
+
+    box-shadow:0 30px 90px rgba(0,20,50,.30);
+
     animation:popupIn .35s ease;
 }
 
 @keyframes popupIn{
     from{
-        transform:translateY(30px) scale(.95);
         opacity:0;
+        transform:translateY(30px) scale(.96);
     }
     to{
-        transform:translateY(0) scale(1);
         opacity:1;
+        transform:translateY(0) scale(1);
     }
 }
 
-.close{
+.popup-close{
     position:absolute;
-    right:17px;
     top:15px;
-    width:38px;
-    height:38px;
-    border-radius:50%;
+    right:15px;
+
+    width:35px;
+    height:35px;
+
     border:0;
-    background:#f1f5f8;
+    border-radius:50%;
+
+    background:#eef5f9;
+    color:#17344e;
+
+    font-size:18px;
     cursor:pointer;
-    font-size:20px;
+}
+
+.popup-logo{
+    width:170px;
+    height:65px;
+    object-fit:contain;
+    margin:0 auto 12px;
 }
 
 .popup-box h2{
-    font-size:32px;
-    margin-bottom:8px;
+    text-align:center;
+    font-size:27px;
+    margin-bottom:7px;
 }
 
 .popup-box>p{
-    color:var(--text);
-    margin-bottom:25px;
-    line-height:1.5;
+    text-align:center;
+    color:#788797;
+    font-size:12px;
+    margin-bottom:22px;
 }
 
 .form-group{
-    margin-bottom:15px;
+    margin-bottom:13px;
 }
 
 .form-group label{
     display:block;
-    font-size:12px;
-    font-weight:900;
-    margin-bottom:7px;
-    color:#34475c;
+    font-size:11px;
+    font-weight:700;
+    color:#45586c;
+    margin-bottom:6px;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea{
     width:100%;
-    border:1px solid #dce5ed;
-    border-radius:12px;
-    padding:14px;
+    border:1px solid #dce7ef;
+    background:#f8fbfd;
+    border-radius:10px;
+
+    padding:12px;
+
     outline:none;
-    font-size:14px;
-    background:#fbfdff;
+
+    font-family:inherit;
+    font-size:13px;
+
     transition:.3s;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus{
-    border-color:var(--blue);
-    box-shadow:0 0 0 4px rgba(8,120,223,.08);
+    border-color:#0794d7;
+    background:white;
+    box-shadow:0 0 0 4px rgba(0,145,220,.08);
 }
 
 .form-group textarea{
-    min-height:90px;
-    resize:vertical;
+    resize:none;
+    height:75px;
 }
 
 .form-submit{
     width:100%;
-    margin-top:5px;
+    border:0;
+    padding:14px;
+    border-radius:11px;
+
+    background:linear-gradient(135deg,#087ed3,#00a17f);
+    color:white;
+
+    font-weight:800;
+    cursor:pointer;
+
+    margin-top:4px;
 }
 
-/* =========================
-   SCROLL REVEAL
-========================= */
+/* =========================================================
+   SCROLL ANIMATION
+========================================================= */
 
 .reveal{
     opacity:0;
-    transform:translateY(50px);
+    transform:translateY(45px);
     transition:
         opacity .9s ease,
-        transform .9s cubic-bezier(.2,.8,.2,1);
+        transform .9s cubic-bezier(.2,.7,.2,1);
 }
 
-.reveal-left{
-    opacity:0;
-    transform:translateX(-60px);
-    transition:
-        opacity .9s ease,
-        transform .9s cubic-bezier(.2,.8,.2,1);
+.reveal.left{
+    transform:translateX(-55px);
 }
 
-.reveal-right{
-    opacity:0;
-    transform:translateX(60px);
-    transition:
-        opacity .9s ease,
-        transform .9s cubic-bezier(.2,.8,.2,1);
+.reveal.right{
+    transform:translateX(55px);
 }
 
-.show{
+.reveal.show{
     opacity:1;
-    transform:translate(0);
+    transform:translate(0,0);
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* stagger */
+.stagger:nth-child(1){transition-delay:.05s;}
+.stagger:nth-child(2){transition-delay:.12s;}
+.stagger:nth-child(3){transition-delay:.19s;}
+.stagger:nth-child(4){transition-delay:.26s;}
+.stagger:nth-child(5){transition-delay:.33s;}
 
-@media(max-width:900px){
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
-    .header{
-        top:8px;
-        width:96%;
-    }
-
-    .navbar{
-        height:62px;
-    }
+@media(max-width:950px){
 
     .nav-links{
-        display:none;
         position:absolute;
-        top:70px;
+        top:74px;
         left:0;
-        width:100%;
-        background:white;
-        border-radius:18px;
-        padding:18px;
+        right:0;
+
+        display:none;
         flex-direction:column;
-        gap:18px;
-        box-shadow:0 20px 40px rgba(7,29,58,.15);
+        align-items:stretch;
+
+        padding:15px;
+
+        background:white;
+        border-radius:16px;
+
+        box-shadow:0 20px 40px rgba(0,40,80,.15);
     }
 
     .nav-links.active{
         display:flex;
     }
 
+    .nav-links a{
+        padding:12px;
+    }
+
     .menu-btn{
         display:block;
     }
 
-    .hero{
-        padding:130px 5% 70px;
-    }
-
-    .hero-container{
+    .hero-grid,
+    .about-grid,
+    .training-grid{
         grid-template-columns:1fr;
         gap:40px;
     }
 
-    .hero h1{
-        font-size:50px;
-        letter-spacing:-3px;
+    .hero{
+        padding-top:125px;
     }
 
-    .hero-text{
-        font-size:16px;
+    .hero-content{
+        text-align:center;
     }
 
-    .hero-visual{
-        min-height:420px;
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
     }
 
-    .hero-image{
-        width:82%;
-    }
-
-    .floating-card{
-        width:180px;
-        padding:15px;
-    }
-
-    .card-one{
-        left:0;
-    }
-
-    .card-two{
-        right:0;
-    }
-
-    .intro-grid,
-    .training-grid{
-        grid-template-columns:1fr;
+    .hero-buttons{
+        justify-content:center;
     }
 
     .opportunity-grid{
         grid-template-columns:1fr;
     }
 
-    .process-grid{
-        grid-template-columns:1fr;
-    }
-
-    .process-card{
-        min-height:auto;
+    .steps{
+        grid-template-columns:repeat(2,1fr);
     }
 
     .benefit-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-grid{
         grid-template-columns:1fr 1fr;
     }
 
-    .feature-content{
-        padding:40px 30px;
+    .float-card.one{
+        right:0;
     }
 
-    .feature-image-wrap{
-        min-height:520px;
+    .float-card.two{
+        left:0;
+    }
+}
+
+@media(max-width:600px){
+
+    section{
+        padding:75px 0;
+    }
+
+    .header{
+        top:8px;
+    }
+
+    .nav{
+        height:60px;
+    }
+
+    .brand img{
+        width:105px;
+        height:42px;
+    }
+
+    .hero{
+        padding-top:110px;
+        min-height:auto;
+    }
+
+    .hero h1{
+        font-size:45px;
+        letter-spacing:-2px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .hero-image-card{
+        min-height:290px;
+        padding:18px;
+        border-radius:25px;
+    }
+
+    .hero-image{
+        height:240px;
+    }
+
+    .float-card{
+        font-size:9px;
+        padding:10px;
+    }
+
+    .section-head h2{
+        font-size:36px;
+    }
+
+    .about-content h3{
+        font-size:34px;
+    }
+
+    .about-image{
+        min-height:280px;
+    }
+
+    .about-image img{
+        height:240px;
+    }
+
+    .steps{
+        grid-template-columns:1fr;
+    }
+
+    .benefit-grid{
+        grid-template-columns:1fr;
+    }
+
+    .training-content h2{
+        font-size:36px;
+    }
+
+    .training-image{
+        min-height:280px;
+    }
+
+    .training-image img{
+        height:240px;
+    }
+
+    .process-image{
+        padding:8px;
     }
 
     .cta-box{
-        padding:55px 25px;
+        padding:50px 20px;
+        border-radius:25px;
     }
 
     .footer-grid{
         grid-template-columns:1fr;
     }
-}
 
-@media(max-width:550px){
-
-    .logo-text{
-        font-size:12px;
+    .enquiry-button{
+        right:15px;
+        bottom:92px;
     }
 
-    .hero h1{
-        font-size:43px;
-    }
-
-    .section{
-        padding:75px 5%;
-    }
-
-    .section-heading h2{
-        font-size:39px;
-    }
-
-    .info-box{
-        padding:27px;
-    }
-
-    .benefit-grid{
-        grid-template-columns:1fr;
-    }
-
-    .hero-buttons,
-    .cta-buttons{
-        flex-direction:column;
-    }
-
-    .btn{
-        width:100%;
+    .whatsapp-float{
+        right:15px;
+        bottom:20px;
     }
 
     .popup-box{
-        padding:25px 20px;
-    }
-
-    .popup-box h2{
-        font-size:27px;
-    }
-
-    .whatsapp{
-        width:56px;
-        height:56px;
-        right:15px;
-        bottom:15px;
+        padding:24px 18px;
     }
 }
 
@@ -1291,24 +1299,18 @@ footer{
 
 <body>
 
-<!-- =========================
+<!-- ======================================================
      HEADER
-========================= -->
+====================================================== -->
 
 <header class="header">
 
-<nav class="navbar">
+<nav class="nav">
 
-<a href="#home" class="logo-area">
-
-<img
-src="https://raw.githubusercontent.com/KARTIK-NETWORK/KARTIK-NETWORK/main/images/file_000000008a048211b2ec3559595fde36.png"
-alt="KARTIK NETWORK Logo">
-
-<div class="logo-text">
-KARTIK NETWORK
-</div>
-
+<a href="#home" class="brand">
+    <img
+    src="https://raw.githubusercontent.com/KARTIK-NETWORK/KARTIK-NETWORK/main/images/file_000000008a048211b2ec3559595fde36.png"
+    alt="KARTIK NETWORK Logo">
 </a>
 
 <div class="nav-links" id="navLinks">
@@ -1316,12 +1318,10 @@ KARTIK NETWORK
 <a href="#home">Home</a>
 <a href="#about">About</a>
 <a href="#opportunities">Opportunities</a>
-<a href="#process">How It Works</a>
+<a href="#how">How It Works</a>
 <a href="#training">Training</a>
 
-<a href="javascript:void(0)"
-class="nav-btn"
-onclick="openPopup()">
+<a href="#join" class="nav-btn">
 Join Partner
 </a>
 
@@ -1334,50 +1334,48 @@ Join Partner
 </header>
 
 
-<!-- =========================
+<!-- ======================================================
      HERO
-========================= -->
+====================================================== -->
 
 <section class="hero" id="home">
 
-<div class="hero-container">
+<div class="container">
 
-<div class="hero-content reveal-left">
+<div class="hero-grid">
+
+<div class="hero-content reveal left">
 
 <div class="badge">
-Built for partners who want structured opportunities
+Built for Partners Who Want Structured Opportunities
 </div>
 
 <h1>
 One Network.<br>
-<span>Multiple</span><br>
-<span>Opportunities.</span>
+<span class="gradient-text">Multiple</span><br>
+Opportunities.
 </h1>
 
-<p class="hero-text">
-KARTIK NETWORK connects partners with eligible opportunities
-across <b>Real Estate, Finance and Digital Services</b> through
-a structured workflow of registration, training, assignment,
-follow-up and support.
+<p>
+KARTIK NETWORK connects partners with eligible opportunities across
+<strong>Real Estate, Finance and Digital Marketing</strong>
+through a structured workflow of registration, training,
+assignment, customer follow-up and support.
 </p>
 
 <div class="hero-buttons">
 
-<button class="btn btn-primary"
-onclick="openPopup()">
+<a href="#join" class="btn btn-primary">
 JOIN AS PARTNER →
-</button>
+</a>
 
-<a
-class="btn btn-green"
-href="https://wa.me/919911513666?text=Hello%20KARTIK%20NETWORK%2C%20I%20want%20to%20join%20as%20a%20partner."
-target="_blank">
+<a href="https://wa.me/919911513666?text=Hello%20KARTIK%20NETWORK%2C%20I%20want%20to%20join%20as%20a%20partner."
+target="_blank"
+class="btn btn-whatsapp">
 WHATSAPP US →
 </a>
 
-<a
-class="btn btn-light"
-href="#opportunities">
+<a href="#opportunities" class="btn btn-light">
 EXPLORE OPPORTUNITIES
 </a>
 
@@ -1386,30 +1384,26 @@ EXPLORE OPPORTUNITIES
 </div>
 
 
-<div class="hero-visual reveal-right">
+<div class="hero-image-wrap reveal right">
+
+<div class="hero-image-card">
 
 <img
 class="hero-image"
 src="https://raw.githubusercontent.com/KARTIK-NETWORK/KARTIK-NETWORK/main/images/file_0000000087ac8211a0864d3fce049ac9.png"
-alt="One Network Multiple Opportunities">
+alt="KARTIK NETWORK - One Network Multiple Opportunities">
 
-<div class="floating-card card-one">
-
-<small>NETWORK</small>
-
-<strong>
-Real Estate • Finance • Digital
-</strong>
-
+<div class="float-card one">
+PARTNER JOURNEY
+<span>Learn • Work • Grow</span>
 </div>
 
-<div class="floating-card card-two">
+<div class="float-card two">
+NETWORK
+<span>Real Estate • Finance • Digital</span>
+</div>
 
-<small>PARTNER JOURNEY</small>
-
-<strong>
-Learn • Work • Grow
-</strong>
+</div>
 
 </div>
 
@@ -1420,100 +1414,85 @@ Learn • Work • Grow
 </section>
 
 
-<!-- =========================
+<!-- ======================================================
      ABOUT
-========================= -->
+====================================================== -->
 
-<section class="section intro" id="about">
+<section class="about" id="about">
 
 <div class="container">
 
-<div class="section-heading reveal">
+<div class="section-head reveal">
 
-<div class="badge">
-Our Network
-</div>
+<div class="badge">OUR NETWORK</div>
 
 <h2>
 Not just a lead.<br>
-<span>A complete workflow.</span>
+<span class="gradient-text">A complete workflow.</span>
 </h2>
 
 <p>
-KARTIK NETWORK is designed to make the partner journey easier
-to understand — from registration and training to assignment,
-follow-up and performance tracking.
+KARTIK NETWORK is designed to make the partner journey easier to understand —
+from registration and training to opportunity discovery,
+assigned work, follow-up and performance tracking.
 </p>
 
 </div>
 
 
-<div class="intro-grid">
+<div class="about-grid">
 
-<div class="info-box reveal-left">
+<div class="about-image reveal left">
 
-<h3>
-What partners can expect
-</h3>
-
-<ul class="check-list">
-
-<li>
-<span class="check">✓</span>
-One Partner Entry Point
-</li>
-
-<li>
-<span class="check">✓</span>
-Structured Digital Workflow
-</li>
-
-<li>
-<span class="check">✓</span>
-Transparent Tracking
-</li>
-
-<li>
-<span class="check">✓</span>
-Training & Support
-</li>
-
-</ul>
+<img
+src="https://raw.githubusercontent.com/KARTIK-NETWORK/KARTIK-NETWORK/main/images/file_00000000035882118667ca90f1facdf8.png"
+alt="About KARTIK NETWORK">
 
 </div>
 
 
-<div class="info-box dark-box reveal-right">
+<div class="about-content reveal right">
 
 <h3>
-Your opportunity is only useful
-when the process is clear.
+A structured ecosystem
+built around the <span class="gradient-text">partner.</span>
 </h3>
 
 <p>
-That is why KARTIK NETWORK combines opportunity discovery,
-training, assigned work, follow-up and support into one
-partner-focused experience.
+Instead of simply sharing a lead, KARTIK NETWORK focuses on a
+structured partner experience — understand the opportunity,
+learn the process, work professionally, follow up with customers
+and move forward with support.
 </p>
 
-<ul class="check-list">
+<div class="check-list">
 
-<li>
-<span class="check">✓</span>
-Grow
-</li>
+<div class="check">
+<i>✓</i>
+One Partner Entry Point
+</div>
 
-<li>
-<span class="check">✓</span>
-Learn
-</li>
+<div class="check">
+<i>✓</i>
+Structured Digital Workflow
+</div>
 
-<li>
-<span class="check">✓</span>
-Earn Together
-</li>
+<div class="check">
+<i>✓</i>
+Transparent Work Process
+</div>
 
-</ul>
+<div class="check">
+<i>✓</i>
+Training & Support
+</div>
+
+<div class="check">
+<i>✓</i>
+Customer Follow-Up
+</div>
+
+</div>
 
 </div>
 
@@ -1524,27 +1503,25 @@ Earn Together
 </section>
 
 
-<!-- =========================
+<!-- ======================================================
      OPPORTUNITIES
-========================= -->
+====================================================== -->
 
-<section class="section opportunities" id="opportunities">
+<section class="opportunities" id="opportunities">
 
 <div class="container">
 
-<div class="section-heading reveal">
+<div class="section-head reveal">
 
-<div class="badge">
-Opportunities
-</div>
+<div class="badge">OPPORTUNITIES</div>
 
 <h2>
-Choose your <span>growth lane.</span>
+Choose your <span class="gradient-text">growth lane.</span>
 </h2>
 
 <p>
-Explore the three core categories available through the
-KARTIK NETWORK partner ecosystem.
+Explore the three core categories available through
+the KARTIK NETWORK partner ecosystem.
 </p>
 
 </div>
@@ -1552,13 +1529,10 @@ KARTIK NETWORK partner ecosystem.
 
 <div class="opportunity-grid">
 
-
-<!-- REAL ESTATE -->
-
-<div class="opportunity-card reveal">
+<div class="opportunity reveal stagger">
 
 <img
-src="https://raw.githubusercontent.com/kartik-network/KARTIK-NETWORK/main/images/file_00000000038588211832c7d4ab3c542fb.png"
+src="https://raw.githubusercontent.com/KARTIK-NETWORK/KARTIK-NETWORK/main/images/file_00000000038588211832c7d4ab3c542fb.png"
 alt="KARTIK NETWORK Real Estate">
 
 <div class="opportunity-overlay"></div>
@@ -1569,25 +1543,21 @@ alt="KARTIK NETWORK Real Estate">
 
 <p>
 Property-related eligible opportunities,
-customer enquiries, follow-ups and sales support.
+customer enquiries, follow-up and sales support.
 </p>
 
-<div class="learn">
-Learn More →
-</div>
+<span class="learn">Learn More →</span>
 
 </div>
 
 </div>
 
 
-<!-- FINANCE -->
-
-<div class="opportunity-card reveal">
+<div class="opportunity reveal stagger">
 
 <img
 src="https://raw.githubusercontent.com/KARTIK-NETWORK/KARTIK-NETWORK/main/images/file_00000000fe9882118d4a7eff365465f4.png"
-alt="Finance Opportunities">
+alt="Business Opportunities">
 
 <div class="opportunity-overlay"></div>
 
@@ -1596,26 +1566,22 @@ alt="Finance Opportunities">
 <h3>Finance</h3>
 
 <p>
-Eligible financial-product campaigns and
-customer assistance through applicable arrangements.
+Eligible financial-product campaigns
+and customer assistance through applicable arrangements.
 </p>
 
-<div class="learn">
-Learn More →
-</div>
+<span class="learn">Learn More →</span>
 
 </div>
 
 </div>
 
 
-<!-- DIGITAL -->
-
-<div class="opportunity-card reveal">
+<div class="opportunity reveal stagger">
 
 <img
-src="https://raw.githubusercontent.com/kartik-network/KARTIK-NETWORK/main/images/file_00000000075fc8211b6d0c7c9abca244d.png"
-alt="Digital Services">
+src="https://raw.githubusercontent.com/KARTIK-NETWORK/KARTIK-NETWORK/main/images/file_00000000fe9882118d4a7eff365465f4.png"
+alt="Digital Marketing Opportunities">
 
 <div class="opportunity-overlay"></div>
 
@@ -1624,13 +1590,11 @@ alt="Digital Services">
 <h3>Digital Services</h3>
 
 <p>
-Website, digital marketing, social media and
-online lead-generation services for businesses.
+Website, digital marketing, social media
+and online lead-generation services for businesses.
 </p>
 
-<div class="learn">
-Learn More →
-</div>
+<span class="learn">Learn More →</span>
 
 </div>
 
@@ -1643,150 +1607,111 @@ Learn More →
 </section>
 
 
-<!-- =========================
-     PROCESS
-========================= -->
+<!-- ======================================================
+     HOW IT WORKS
+====================================================== -->
 
-<section class="section process" id="process">
+<section id="how">
 
 <div class="container">
 
-<div class="section-heading reveal">
+<div class="section-head reveal">
 
-<div class="badge">
-How It Works
-</div>
+<div class="badge">HOW IT WORKS</div>
 
 <h2>
 Five steps.<br>
-<span>One clear process.</span>
+<span class="gradient-text">One clear process.</span>
 </h2>
 
 <p>
-The workflow is intentionally simple so a new partner can
-understand what happens next.
+The workflow is intentionally simple so a new partner
+can understand what happens next.
 </p>
 
 </div>
 
 
-<div class="process-grid">
+<div class="steps">
 
-<div class="process-card reveal">
+<div class="step reveal stagger">
 
-<div class="process-number">01</div>
+<div class="step-number">01</div>
 
 <h3>Register</h3>
 
 <p>
-Complete your partner registration and share
-your basic details.
+Complete your partner registration
+and share your basic details.
 </p>
 
 </div>
 
 
-<div class="process-card reveal">
+<div class="step reveal stagger">
 
-<div class="process-number">02</div>
+<div class="step-number">02</div>
 
 <h3>Training</h3>
 
 <p>
-Understand opportunities, customer conversation
-and the work process.
+Understand opportunities, customer
+conversation and the work process.
 </p>
 
 </div>
 
 
-<div class="process-card reveal">
+<div class="step reveal stagger">
 
-<div class="process-number">03</div>
+<div class="step-number">03</div>
 
 <h3>Get Assignment</h3>
 
 <p>
-View applicable campaigns, work or customer
-enquiries as available.
+View applicable campaigns, work
+or customer enquiries as available.
 </p>
 
 </div>
 
 
-<div class="process-card reveal">
+<div class="step reveal stagger">
 
-<div class="process-number">04</div>
+<div class="step-number">04</div>
 
 <h3>Work & Follow Up</h3>
 
 <p>
-Contact customers and complete assigned
-work professionally.
+Contact customers and complete
+assigned work professionally.
 </p>
 
 </div>
 
 
-<div class="process-card reveal">
+<div class="step reveal stagger">
 
-<div class="process-number">05</div>
+<div class="step-number">05</div>
 
 <h3>Submit & Track</h3>
 
 <p>
-Submit work status and track eligible performance
-or commission information where applicable.
+Submit work status and track
+eligible performance information.
 </p>
 
 </div>
 
 </div>
 
-</div>
 
-</section>
-
-
-<!-- =========================
-     FEATURE
-========================= -->
-
-<section class="section feature-section">
-
-<div class="container">
-
-<div class="feature-image-wrap reveal">
+<div class="process-image reveal">
 
 <img
-class="feature-image"
 src="https://raw.githubusercontent.com/KARTIK-NETWORK/KARTIK-NETWORK/main/images/file_00000000f0b0821181799a5dc1fcd872.png"
 alt="KARTIK NETWORK How It Works">
 
-<div class="feature-overlay"></div>
-
-<div class="feature-content">
-
-<h2>
-Opportunity becomes powerful
-when the <span>process is clear.</span>
-</h2>
-
-<p>
-KARTIK NETWORK brings registration, training,
-opportunity discovery, assigned work, customer
-follow-up and support together in one structured
-partner journey.
-</p>
-
-<button
-class="btn btn-primary"
-onclick="openPopup()">
-GROW • LEARN • EARN TOGETHER
-</button>
-
-</div>
-
 </div>
 
 </div>
@@ -1794,34 +1719,32 @@ GROW • LEARN • EARN TOGETHER
 </section>
 
 
-<!-- =========================
+<!-- ======================================================
      TRAINING
-========================= -->
+====================================================== -->
 
-<section class="section training" id="training">
+<section class="training" id="training">
 
 <div class="container">
 
 <div class="training-grid">
 
-<div class="reveal-left">
+<div class="training-image reveal left">
 
 <img
-class="training-image"
 src="https://raw.githubusercontent.com/KARTIK-NETWORK/KARTIK-NETWORK/main/images/file_00000000f9dc8211bfc7dc47c09b1d44.png"
 alt="KARTIK NETWORK Training and Support">
 
 </div>
 
 
-<div class="training-content reveal-right">
+<div class="training-content reveal right">
 
-<div class="badge">
-Partner Training
-</div>
+<div class="badge">PARTNER TRAINING</div>
 
 <h2>
-Learn before you <span>start.</span>
+Learn before you
+<span class="gradient-text">start.</span>
 </h2>
 
 <p>
@@ -1830,51 +1753,60 @@ the opportunity, customer communication, work status,
 follow-up and support process.
 </p>
 
-<div class="training-points">
 
-<div class="training-point">
+<div class="training-list">
 
-<div class="training-icon">01</div>
+<div class="training-item">
 
-<div>
-<strong>Partner Registration</strong>
-<p>Learn how to join and complete your basic profile.</p>
-</div>
-
-</div>
-
-
-<div class="training-point">
-
-<div class="training-icon">02</div>
+<span>01</span>
 
 <div>
-<strong>Opportunity Selection</strong>
-<p>Understand Real Estate, Finance and Digital Services categories.</p>
+<h4>Partner Registration</h4>
+<p>
+Learn how to join and complete your basic profile.
+</p>
 </div>
 
 </div>
 
 
-<div class="training-point">
+<div class="training-item">
 
-<div class="training-icon">03</div>
+<span>02</span>
 
 <div>
-<strong>Customer Conversation</strong>
-<p>Learn professional communication and follow-up basics.</p>
+<h4>Opportunity Selection</h4>
+<p>
+Understand Real Estate, Finance and Digital Services categories.
+</p>
 </div>
 
 </div>
 
 
-<div class="training-point">
+<div class="training-item">
 
-<div class="training-icon">04</div>
+<span>03</span>
 
 <div>
-<strong>Work Status</strong>
-<p>Understand how assigned work can be submitted and tracked.</p>
+<h4>Customer Conversation</h4>
+<p>
+Learn professional communication and follow-up basics.
+</p>
+</div>
+
+</div>
+
+
+<div class="training-item">
+
+<span>04</span>
+
+<div>
+<h4>Work Status</h4>
+<p>
+Understand how assigned work can be submitted and tracked.
+</p>
 </div>
 
 </div>
@@ -1890,22 +1822,20 @@ follow-up and support process.
 </section>
 
 
-<!-- =========================
-     BENEFITS
-========================= -->
+<!-- ======================================================
+     PARTNER BENEFITS
+====================================================== -->
 
-<section class="section benefits">
+<section class="benefits">
 
 <div class="container">
 
-<div class="section-heading reveal">
+<div class="section-head reveal">
 
-<div class="badge">
-Partner Benefits
-</div>
+<div class="badge">PARTNER BENEFITS</div>
 
 <h2>
-Built around the <span>partner.</span>
+Built around the <span class="gradient-text">partner.</span>
 </h2>
 
 <p>
@@ -1918,7 +1848,7 @@ simple, transparent and easier to follow.
 
 <div class="benefit-grid">
 
-<div class="benefit reveal">
+<div class="benefit reveal stagger">
 
 <div class="benefit-icon">✓</div>
 
@@ -1931,7 +1861,7 @@ Register once and understand available opportunity categories.
 </div>
 
 
-<div class="benefit reveal">
+<div class="benefit reveal stagger">
 
 <div class="benefit-icon">✓</div>
 
@@ -1944,7 +1874,7 @@ Understand the process before moving into customer work.
 </div>
 
 
-<div class="benefit reveal">
+<div class="benefit reveal stagger">
 
 <div class="benefit-icon">✓</div>
 
@@ -1957,7 +1887,7 @@ Stay organised with customer communication and work follow-up.
 </div>
 
 
-<div class="benefit reveal">
+<div class="benefit reveal stagger">
 
 <div class="benefit-icon">✓</div>
 
@@ -1976,17 +1906,57 @@ Get guidance around applicable work processes and support.
 </section>
 
 
-<!-- =========================
-     CTA
-========================= -->
+<!-- ======================================================
+     EXTRA NETWORK IMAGE
+====================================================== -->
 
-<section class="cta">
+<section>
+
+<div class="container">
+
+<div class="section-head reveal">
+
+<div class="badge">PARTNER JOURNEY</div>
+
+<h2>
+Opportunity becomes powerful
+when the <span class="gradient-text">process is clear.</span>
+</h2>
+
+<p>
+Registration, training, opportunity discovery, assigned work,
+customer follow-up and support — together in one structured journey.
+</p>
+
+</div>
+
+
+<div class="process-image reveal">
+
+<img
+src="https://raw.githubusercontent.com/KARTIK-NETWORK/KARTIK-NETWORK/main/images/file_00000000ccc48211a813a5da7cfbe459.png"
+alt="KARTIK NETWORK Partner Journey">
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     FINAL CTA
+====================================================== -->
+
+<section class="cta" id="join">
+
+<div class="container">
 
 <div class="cta-box reveal">
 
 <h2>
 Ready to become a
-<span>KARTIK NETWORK Partner?</span>
+<span>KARTIK NETWORK</span> Partner?
 </h2>
 
 <p>
@@ -1997,18 +1967,19 @@ with structured support.
 
 <div class="cta-buttons">
 
-<button
-class="btn btn-primary"
+<button class="btn btn-primary"
 onclick="openPopup()">
 JOIN AS PARTNER →
 </button>
 
 <a
-class="btn btn-green"
 href="https://wa.me/919911513666?text=Hello%20KARTIK%20NETWORK%2C%20I%20want%20to%20become%20a%20partner."
-target="_blank">
+target="_blank"
+class="btn btn-whatsapp">
 WHATSAPP US →
 </a>
+
+</div>
 
 </div>
 
@@ -2017,30 +1988,26 @@ WHATSAPP US →
 </section>
 
 
-<!-- =========================
+<!-- ======================================================
      FOOTER
-========================= -->
+====================================================== -->
 
 <footer>
 
-<div class="footer-grid">
+<div class="container">
 
-<div>
+<div class="footer-grid">
 
 <div class="footer-brand">
 
 <img
-src="https://raw.githubusercontent.com/KARTIK-NETWORK/KARTIK-NETWORK/main/images/file_000000008a048211b2ec3559595fde36.png"
+src="https://raw.githubusercontent.com/KARTIK-NETWORK/KARTIK-NETWORK/main/images/file_0000000087ac8211a0864d3fce049ac9.png"
 alt="KARTIK NETWORK">
-
-<strong>KARTIK NETWORK</strong>
-
-</div>
 
 <p>
 One Network. Multiple Opportunities.
 Connecting partners with structured opportunities
-across Real Estate, Finance and Digital Services.
+across Real Estate, Finance and Digital Marketing.
 </p>
 
 </div>
@@ -2048,33 +2015,41 @@ across Real Estate, Finance and Digital Services.
 
 <div>
 
-<h3>Explore</h3>
+<h4>Explore</h4>
 
 <a href="#home">Home</a>
 <a href="#about">About</a>
 <a href="#opportunities">Opportunities</a>
-<a href="#process">How It Works</a>
-<a href="#training">Training</a>
+<a href="#how">How It Works</a>
 
 </div>
 
 
 <div>
 
-<h3>Partner</h3>
+<h4>Partner</h4>
 
-<a href="javascript:void(0)" onclick="openPopup()">
-Join as Partner
-</a>
+<a href="#join">Join as Partner</a>
 
-<a
-href="https://wa.me/919911513666?text=Hello%20KARTIK%20NETWORK%2C%20I%20need%20partner%20information."
+<a href="https://wa.me/919911513666"
 target="_blank">
-WhatsApp
+WhatsApp Us
 </a>
+
+</div>
+
+
+<div>
+
+<h4>Contact</h4>
 
 <a href="tel:+919911513666">
 Call: 9911513666
+</a>
+
+<a href="https://wa.me/919911513666"
+target="_blank">
+WhatsApp: 9911513666
 </a>
 
 </div>
@@ -2088,60 +2063,61 @@ Call: 9911513666
 
 </div>
 
+</div>
+
 </footer>
 
 
-<!-- =========================
-     WHATSAPP BUTTON
-========================= -->
+<!-- ======================================================
+     FLOATING BUTTONS
+====================================================== -->
+
+<button class="enquiry-button" onclick="openPopup()">
+ENQUIRE NOW
+</button>
+
 
 <a
-class="whatsapp"
-href="https://wa.me/919911513666?text=Hello%20KARTIK%20NETWORK%2C%20I%20want%20to%20know%20more%20about%20partner%20opportunities."
+class="whatsapp-float"
+href="https://wa.me/919911513666?text=Hello%20KARTIK%20NETWORK%2C%20I%20want%20more%20information."
 target="_blank"
 aria-label="WhatsApp">
 ☎
 </a>
 
 
-<!-- =========================
-     POPUP FORM
-========================= -->
+<!-- ======================================================
+     ENQUIRY POPUP
+====================================================== -->
 
-<div class="popup" id="partnerPopup">
+<div class="popup" id="popup">
 
 <div class="popup-box">
 
-<button
-class="close"
-onclick="closePopup()">
-×
-</button>
+<button class="popup-close" onclick="closePopup()">×</button>
 
-<div class="badge">
-Join KARTIK NETWORK
-</div>
+<img
+class="popup-logo"
+src="https://raw.githubusercontent.com/KARTIK-NETWORK/KARTIK-NETWORK/main/images/file_000000008a048211b2ec3559595fde36.png"
+alt="KARTIK NETWORK Logo">
 
-<h2>
-Become a Partner.
-</h2>
+<h2>Partner Enquiry</h2>
 
 <p>
-Fill the form. Your details will be prepared
-for WhatsApp submission to the KARTIK NETWORK team.
+Fill your details and continue on WhatsApp.
 </p>
 
 
-<form id="partnerForm">
+<form id="enquiryForm">
 
 <div class="form-group">
 
-<label>FULL NAME *</label>
+<label>FULL NAME</label>
 
 <input
 type="text"
-id="fullName"
-placeholder="Your full name"
+id="name"
+placeholder="Enter your name"
 required>
 
 </div>
@@ -2149,12 +2125,13 @@ required>
 
 <div class="form-group">
 
-<label>MOBILE NUMBER *</label>
+<label>MOBILE NUMBER</label>
 
 <input
 type="tel"
 id="mobile"
-placeholder="10-digit mobile"
+placeholder="Enter mobile number"
+pattern="[0-9]{10}"
 maxlength="10"
 required>
 
@@ -2163,43 +2140,19 @@ required>
 
 <div class="form-group">
 
-<label>EMAIL</label>
-
-<input
-type="email"
-id="email"
-placeholder="you@example.com">
-
-</div>
-
-
-<div class="form-group">
-
-<label>CITY</label>
-
-<input
-type="text"
-id="city"
-placeholder="Your city">
-
-</div>
-
-
-<div class="form-group">
-
-<label>INTERESTED IN *</label>
+<label>INTERESTED IN</label>
 
 <select id="interest" required>
 
-<option value="">Select an opportunity</option>
+<option value="">Select opportunity</option>
 
 <option>Real Estate</option>
 
 <option>Finance</option>
 
-<option>Digital Services</option>
+<option>Digital Marketing</option>
 
-<option>Multiple Opportunities</option>
+<option>All Opportunities</option>
 
 </select>
 
@@ -2208,21 +2161,17 @@ placeholder="Your city">
 
 <div class="form-group">
 
-<label>EXPERIENCE / MESSAGE</label>
+<label>MESSAGE</label>
 
 <textarea
 id="message"
-placeholder="Tell us briefly about your experience or what you are looking for."></textarea>
+placeholder="Write your requirement"></textarea>
 
 </div>
 
 
-<button
-type="submit"
-class="btn btn-primary form-submit">
-
-SUBMIT VIA WHATSAPP →
-
+<button type="submit" class="form-submit">
+SUBMIT ENQUIRY ON WHATSAPP →
 </button>
 
 </form>
@@ -2232,51 +2181,70 @@ SUBMIT VIA WHATSAPP →
 </div>
 
 
+<!-- ======================================================
+     JAVASCRIPT
+====================================================== -->
+
 <script>
 
-/* =========================
+/* =========================================================
    MOBILE MENU
-========================= */
+========================================================= */
 
 function toggleMenu(){
 
-    const nav = document.getElementById("navLinks");
-
-    nav.classList.toggle("active");
+    document
+    .getElementById("navLinks")
+    .classList
+    .toggle("active");
 
 }
 
 
-/* =========================
+/* =========================================================
+   CLOSE MOBILE MENU WHEN LINK CLICKED
+========================================================= */
+
+document.querySelectorAll(".nav-links a").forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        document
+        .getElementById("navLinks")
+        .classList
+        .remove("active");
+
+    });
+
+});
+
+
+/* =========================================================
    POPUP
-========================= */
+========================================================= */
 
 function openPopup(){
 
     document
-    .getElementById("partnerPopup")
-    .classList.add("active");
-
-    document.body.style.overflow="hidden";
+    .getElementById("popup")
+    .classList
+    .add("active");
 
 }
 
 function closePopup(){
 
     document
-    .getElementById("partnerPopup")
-    .classList.remove("active");
-
-    document.body.style.overflow="";
+    .getElementById("popup")
+    .classList
+    .remove("active");
 
 }
 
 
-/* CLOSE WHEN CLICK OUTSIDE */
+/* Close popup outside box */
 
-document
-.getElementById("partnerPopup")
-.addEventListener("click",function(e){
+document.getElementById("popup").addEventListener("click",function(e){
 
     if(e.target === this){
         closePopup();
@@ -2285,38 +2253,21 @@ document
 });
 
 
-/* ESC KEY */
-
-document.addEventListener("keydown",function(e){
-
-    if(e.key === "Escape"){
-        closePopup();
-    }
-
-});
-
-
-/* =========================
-   WHATSAPP FORM
-========================= */
+/* =========================================================
+   FORM → WHATSAPP
+========================================================= */
 
 document
-.getElementById("partnerForm")
+.getElementById("enquiryForm")
 .addEventListener("submit",function(e){
 
     e.preventDefault();
 
     const name =
-    document.getElementById("fullName").value.trim();
+    document.getElementById("name").value.trim();
 
     const mobile =
     document.getElementById("mobile").value.trim();
-
-    const email =
-    document.getElementById("email").value.trim();
-
-    const city =
-    document.getElementById("city").value.trim();
 
     const interest =
     document.getElementById("interest").value;
@@ -2325,96 +2276,87 @@ document
     document.getElementById("message").value.trim();
 
 
-    if(!/^[0-9]{10}$/.test(mobile)){
-
-        alert("Please enter a valid 10-digit mobile number.");
-
-        return;
-
-    }
-
-
     const whatsappMessage =
 `Hello KARTIK NETWORK,
 
-I want to become a Partner.
+I want to enquire about becoming a partner.
 
 Name: ${name}
 Mobile: ${mobile}
-Email: ${email || "Not provided"}
-City: ${city || "Not provided"}
 Interested In: ${interest}
-Experience / Message: ${message || "Not provided"}
+Message: ${message || "I want more information about the opportunity."}
 
-Please contact me regarding the partner registration process.`;
+Please contact me.`;
 
 
-    const whatsappURL =
+    const url =
     "https://wa.me/919911513666?text="
     + encodeURIComponent(whatsappMessage);
 
 
-    window.open(whatsappURL,"_blank");
+    window.open(url,"_blank");
 
 });
 
 
-/* =========================
-   SCROLL REVEAL
-========================= */
+/* =========================================================
+   SCROLL REVEAL ANIMATION
+========================================================= */
 
 const observer =
 new IntersectionObserver(
 
-(entries)=>{
+    function(entries){
 
-    entries.forEach(entry=>{
+        entries.forEach(function(entry){
 
-        if(entry.isIntersecting){
+            if(entry.isIntersecting){
 
-            entry.target.classList.add("show");
+                entry.target.classList.add("show");
 
-            observer.unobserve(entry.target);
+            }
 
-        }
+        });
 
-    });
+    },
 
-},
+    {
+        threshold:.12
+    }
 
-{
-    threshold:.12
-});
+);
 
 
 document
-.querySelectorAll(
-".reveal,.reveal-left,.reveal-right"
-)
-.forEach(el=>{
+.querySelectorAll(".reveal")
+.forEach(function(element){
 
-    observer.observe(el);
+    observer.observe(element);
 
 });
 
 
-/* =========================
-   NAV LINK CLOSE MOBILE
-========================= */
+/* =========================================================
+   HERO IMAGE FLOAT ANIMATION
+========================================================= */
 
-document
-.querySelectorAll(".nav-links a")
-.forEach(link=>{
+const heroCard =
+document.querySelector(".hero-image-card");
 
-    link.addEventListener("click",()=>{
+let angle = 0;
 
-        document
-        .getElementById("navLinks")
-        .classList.remove("active");
+setInterval(function(){
 
-    });
+    angle += .02;
 
-});
+    if(heroCard){
+
+        heroCard.style.transform =
+        `translateY(${Math.sin(angle)*5}px)`;
+
+    }
+
+},30);
 
 </script>
 
